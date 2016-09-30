@@ -29,6 +29,11 @@ define(function() {
         			window.setTimeout(that.checkAuth, 1);
         		};
         		var scripttag = document.createElement('script');
+
+        		scripttag.onerror = function(err) {
+        			alert("Error loading needed resource\nPlease, check your internet, proxy and firewall settings");
+        		}
+
         		scripttag.setAttribute('src','https://apis.google.com/js/client.js?onload=_ga_client_load_callback');
         		document.head.appendChild(scripttag);
         		
